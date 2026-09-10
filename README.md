@@ -11,7 +11,23 @@ DSE 511 – Fall 2026
 
 - Mahbuba Jyoti
 
+## Project Structure
 
+```text
+south-america-co2-eda/
+├── README.md
+├── LICENSE
+├── requirements.txt
+├── data/
+│   └── raw/
+│       └── south_america_co2_data.csv
+├── notebooks/
+│   └── 01-south-america-co2-eda.ipynb
+├── references/
+│   └── data_dictionary.md
+└── reports/
+    └── figures/
+```
 ## Data Source
 
 - Source: [Insert dataset name + link (e.g., Our World in Data)]
