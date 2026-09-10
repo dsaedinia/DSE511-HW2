@@ -18,9 +18,9 @@ south-america-co2-eda/
 ├── README.md
 ├── LICENSE
 ├── requirements.txt
-├── data/
-│   └── raw/
-│       └── south_america_co2_data.csv
+├── data
+│   ├── processed      <- The final, canonical data sets for modeling.
+│   └── raw            <- The original, immutable data dump.
 ├── notebooks/
 │   └── 01-south-america-co2-eda.ipynb
 ├── references/
