@@ -19,8 +19,8 @@ south-america-co2-eda/
 ├── LICENSE
 ├── requirements.txt
 ├── data
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
+│   ├── processed      <- The finalg.
+│   └── raw            <- The original.
 ├── notebooks/
 │   └── 01-south-america-co2-data_cleaning.ipynb
 │   └── 02-south-america-co2-eda_Viz.ipynb
