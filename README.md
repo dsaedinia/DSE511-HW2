@@ -22,7 +22,8 @@ south-america-co2-eda/
 │   ├── processed      <- The final, canonical data sets for modeling.
 │   └── raw            <- The original, immutable data dump.
 ├── notebooks/
-│   └── 01-south-america-co2-eda.ipynb
+│   └── 01-south-america-co2-data_cleaning.ipynb
+│   └── 02-south-america-co2-eda_Viz.ipynb
 ├── references/
 │   └── data_dictionary.md
 └── reports/
