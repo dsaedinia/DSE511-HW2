@@ -89,7 +89,7 @@ The EDA shows substantial differences in CO₂ emissions across South American c
 
 The figure below shows the average CO₂ emissions per capita by country.
 
-![Average CO₂ Emissions per Capita by Country](figures/co2_per_capita_by_country.png)how()
+![Average CO₂ Emissions per Capita by Country](reports/figures/co2_per_capita_by_country.png)how()
 
 
 ### Reflection
