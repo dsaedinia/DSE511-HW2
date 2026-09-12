@@ -87,18 +87,9 @@ The EDA shows substantial differences in CO₂ emissions across South American c
 
 ### Representative Figure
 
-The figure below shows the **average CO₂ emissions per capita by country**, generated directly using Python code.
+The figure below shows the average CO₂ emissions per capita by country.
 
-```python
-plt.figure(figsize=(10, 6))
-
-country_co2_pc.sort_values().plot(kind="barh")
-
-plt.xlabel("Average CO₂ emissions per capita")
-plt.ylabel("Country")
-plt.title("Average CO₂ Emissions per Capita by Country")
-
-plt.show()
+![Average CO₂ Emissions per Capita by Country](figures/co2_per_capita_by_country.png)how()
 ```
 
 ### Reflection
