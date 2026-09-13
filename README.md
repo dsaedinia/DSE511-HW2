@@ -19,7 +19,7 @@ south-america-co2-eda/
 ├── LICENSE
 ├── requirements.txt
 ├── data
-│   ├── processed      <- The finalg.
+│   ├── processed      <- The final dataset.
 │   └── raw            <- The original.
 ├── notebooks/
 │   └── 01-data_parse.ipynb
@@ -29,27 +29,39 @@ south-america-co2-eda/
 └── reports/
     └── figures/
 ```
+
 ## Data Source
 
-- Source: [Insert dataset name + link (e.g., Our World in Data)]
+- Sources:
 
-- Date accessed: [Insert date]
+  - **CO2 and Greenhouse Gas Emissions, Our World in Data (OWID)** (<https://ourworldindata.org/co2-and-greenhouse-gas-emissions>) - underlying data from Global Carbon Budget (2025); Population based on various sources; Bolt and van Zanden – Maddison Project Database 2023. Accessed 09/07/2026. Annual CO2 Emissions and related variables (e,g,. per capita, growth rate, land-use change) for years 1870-2022. Annual CO2 is expressed in million tonnes (Mt). Licesed under Creative Commons BY (CC-BY 4.0). Size: 13.7 MB
 
-- Description: Briefly describe the dataset (variables, units, scope).
-
-- Size: [e.g., 2.3 MB, 10,000 rows]
-
-- License (if known): [e.g., CC-BY]
+  - **Gross Domestic Product, Our World in Data (OWID)** (<https://ourworldindata.org/grapher/gdp-worldbank>) - underlying data from Eurostat, OECD, IMF, and World Bank (2026) with minor processing by OWID. Accessed 09/10/2026. Annual purchasing power parity (PPP) adjusted GDP data from 1990-2025. GDP is expressed in international-$ in 2021 prices. Licesed under Creative Commons BY (CC-BY 4.0). Size: 241 KB
 
 ## Methods
 
 ### Data Cleaning (Daniel Saedi Nia)
 
-- List specific steps (e.g., handled missing values, renamed variables, filtered rows).
+- Sourced CO2 and GDP datasets through reproducible methods in data parse notebook.
 
-- Tools/libraries used (e.g., pandas, numpy).
+- Filtered OWID's raw CO2 dataset down to South American countries and limit scope of analysis
+
+- Reduced cols down to usable and relevant metrics when it comes to comparisons of GDP and CO2 emissions
+
+- Filtered dataset to years 1990 - 2024 due to limitation in dataset from missing data
+
+- Missing GDP values replaced for Guyana and Suriname (missing for all years making filling difficult). Both countries had data from World Bank dataset.
+
+- Replaced GDP entirely for all coiuntries in the South American CO2 dataset for consistency, as World Bank GDP PPP data is expressed in international-$ in 2021 prices, while the original dataset was based in 2011
+
+- Recomputed cols/variables dependent on GDP with necessary unit conversions like `co2_per_gdp` (converting co2 from million tonnes to kilograms)
+
+- Validated the merge and checked for duplicates. Checked values against source pages to ensure correct merge and checked for errors in data.
+
+- Tools/libraries used: Pandas, numpy
 
 ### Exploratory Data Analysis (Mahbuba Jyoti)
+
 ```text
 1. Dataset Overview
 2. Data Quality Check
@@ -79,6 +91,7 @@ south-america-co2-eda/
 
 8. Key Findings
 ```
+
 ## Results
 
 ## Key Findings from EDA
@@ -89,17 +102,15 @@ The EDA shows substantial differences in CO₂ emissions across South American c
 
 The figure below shows the average CO₂ emissions per capita by country.
 
-![Average CO₂ Emissions per Capita by Country](reports/figures/co2_per_capita_by_country.png)how()
-
+![Average CO₂ Emissions per Capita by Country](reports/figures/co2_per_capita_by_country.png)
 
 ### Reflection
 
 One interesting finding was that the country with the highest total CO₂ emissions was not the country with the highest CO₂ emissions per capita. This demonstrates why examining both total and per-capita emissions provides a more complete understanding of emissions patterns.
 
-
 ## Collaboration Notes
 
-- Daniel Saedi Nia contributions: [e.g., data cleaning, repo setup]
+- Daniel Saedi Nia contributions: Repo setup, as well as data aquisition and cleaning. GDP source replacement and dataset validation.  
 
 - Mahbuba Jyoti contributions:  Conducted the initial data overview, performed data preprocessing and organization, conducted exploratory data analysis (EDA), and contributed to documentation.
 
@@ -107,11 +118,33 @@ One interesting finding was that the country with the highest total CO₂ emissi
 
 ## Reproducibility Instructions
 
-- How to run the notebook/script (python script.py or open notebooks/EDA.ipynb).
+1. Clone the repository
 
-- Dependencies (e.g., requirements.txt or conda environment).
+2. Navigate to project directory
 
-- Special instructions (if any).
+3. If using uv as your package manager, run the following command to install the dependencies:
+
+```bash
+uv sync
+```
+
+Otherwise, if you are using pip, you can install the dependencies by running:
+
+```bash
+pip install .
+```
+
+or
+
+```bash
+pip install -r requirements.txt
+```
+
+4.Run the notebooks located in the notebook folder in the following order.
+
+- `data_parse.ipynb` for data aquisition and cleaning
+
+- `south_america_co2_eda_Viz.ipynb` or `south_america_co2_eda_Viz.py` for EDA
 
 ## Merge Conflict Reflection (Required)
 
