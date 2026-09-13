@@ -146,6 +146,5 @@ pip install -r requirements.txt
 
 - `south_america_co2_eda_Viz.ipynb` or `south_america_co2_eda_Viz.py` for EDA
 
-## Merge Conflict Reflection (Required)
+## Merge Conflict Reflection (Words to create merge conflict)
 
-- Briefly describe the merge conflict you created and how you resolved it.
