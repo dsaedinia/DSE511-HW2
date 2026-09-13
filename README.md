@@ -99,11 +99,11 @@ One interesting finding was that the country with the highest total CO₂ emissi
 
 ## Collaboration Notes
 
-- Partner A contributions: [e.g., data cleaning, repo setup]
+- Daniel Saedi Nia contributions: [e.g., data cleaning, repo setup]
 
-- Partner B contributions: [e.g., EDA, visualization]
+- Mahbuba Jyoti contributions:  Conducted the initial data overview, performed data preprocessing and organization, conducted exploratory data analysis (EDA), and contributed to documentation.
 
-- Both: [e.g., documentation, merge conflict resolution]
+- Both: Collaborated on the project, discussed the analysis and Git workflow, reviewed each other's work, and worked together on the merge conflict resolution.
 
 ## Reproducibility Instructions
 
