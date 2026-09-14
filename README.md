@@ -95,11 +95,13 @@ south-america-co2-eda/
 ## Results
 
 ## Key Findings from EDA
+
 > **Key Summary:** South American $\text{CO}_2$ emissions are heavily right-skewed and concentrated in large economies like Brazil, showing near-perfect coupling with GDP ($r = 0.993$), primary energy use ($r = 0.990$), and population ($r = 0.939$). However, per-capita emissions follow a completely different pattern—led by smaller nations like Venezuela and Suriname—while a total absence of Venezuelan GDP data from 1990 to 2024 presents a major regional analytical constraint.
 > 
 The key findings from the exploratory data analysis (EDA) of South American $\text{CO}_2$ emissions are summarized below:
 
 ### 1. Large Differences in Total $\text{CO}_2$ Emissions Across Countries
+
 The analysis shows substantial differences in total $\text{CO}_2$ emissions among South American countries. Brazil has the highest average annual $\text{CO}_2$ emissions, at approximately 391.59 Mt, followed by Argentina (160.16 Mt) and Venezuela (138.22 Mt). In contrast, Guyana and Suriname have considerably lower total emissions. This indicates that total regional $\text{CO}_2$ emissions are concentrated among a relatively small number of countries with larger populations and greater levels of economic and energy activity.
 
 ![Total CO2 Emissions Trend](./reports/figures/total_co2_emissions_trend.png)
@@ -107,6 +109,7 @@ The analysis shows substantial differences in total $\text{CO}_2$ emissions amon
 ***
 
 ### 2. Total $\text{CO}_2$ Emissions and $\text{CO}_2$ per Capita Show Different Patterns
+
 Brazil has the highest total $\text{CO}_2$ emissions, but it does not have the highest average $\text{CO}_2$ emissions per capita. Venezuela and Suriname have the highest average $\text{CO}_2$ emissions per capita, at approximately 5.26 and 4.34 tonnes per person, respectively. This demonstrates that total emissions and per-capita emissions capture different aspects of environmental impact. A country with a smaller population can have relatively low total emissions while still having high emissions per person.
 
 ![Average CO2 Emissions per Capita by Country](./reports/figures/avg_co2_per_capita_by_country.png)
@@ -114,6 +117,7 @@ Brazil has the highest total $\text{CO}_2$ emissions, but it does not have the h
 ***
 
 ### 3. $\text{CO}_2$ Emissions Are Strongly Right-Skewed
+
 The distribution of annual $\text{CO}_2$ emissions is strongly right-skewed. Most country-year observations have relatively low emissions, with many observations below approximately 100 Mt, while a smaller number of observations have substantially higher emissions, including values above 500 Mt. This indicates considerable variation in emissions across countries and years. Because of this skewed distribution, the median can provide a useful representation of a typical observation in addition to the mean.
 
 ![Distribution of Annual CO2 Emissions](./reports/figures/distribution_annual_co2_emissions.png)
@@ -121,6 +125,7 @@ The distribution of annual $\text{CO}_2$ emissions is strongly right-skewed. Mos
 ***
 
 ### 4. GDP, Population, Energy Consumption, and $\text{CO}_2$ Are Strongly Associated
+
 The correlation analysis reveals very strong positive relationships among population, economic activity, energy consumption, and total $\text{CO}_2$ emissions. Some of the strongest correlations are:
 
 | Relationship | Correlation (r) |
@@ -138,6 +143,7 @@ These results indicate that observations with larger populations, higher GDP, an
 ***
 
 ### 5. Per-Capita Measures Provide a Different Perspective
+
 Although total $\text{CO}_2$ emissions are strongly associated with GDP and population, $\text{CO}_2$ per capita has a much weaker relationship with these variables. The correlation between $\text{CO}_2$ per capita and GDP is only 0.056, while its correlation with population is −0.066. This contrast shows that analyzing only total emissions can hide important differences in emissions intensity at the individual level. Therefore, both total and per-capita measures are important for understanding emissions patterns.
 
 ![Distribution of CO2 Emissions per Capita](./reports/figures/distribution_co2_per_capita.png)
@@ -145,6 +151,7 @@ Although total $\text{CO}_2$ emissions are strongly associated with GDP and popu
 ***
 
 ### 6. Emissions Intensity Is Related to Energy Intensity
+
 The correlation between $\text{CO}_2$ per GDP and energy per GDP is 0.708, indicating a relatively strong positive association between emissions intensity and energy intensity. This suggests that observations with higher energy use relative to GDP also tend to have higher $\text{CO}_2$ emissions relative to GDP. Measures of emissions and energy intensity therefore provide additional information beyond total emissions.
 
 ![Energy Consumption vs CO2 Emissions](./reports/figures/energy_consumption_vs_co2_emissions.png)
@@ -152,9 +159,11 @@ The correlation between $\text{CO}_2$ per GDP and energy per GDP is 0.708, indic
 ***
 
 ### 7. Missing GDP Data for Venezuela Is an Important Limitation
+
 A significant data-quality limitation is the absence of GDP-related information for Venezuela across the 1990–2024 period. The variables `gdp`, `co2_per_gdp`, and `energy_per_gdp` contain missing values for Venezuela. Consequently, analyses involving these economic indicators may not fully represent all countries in the dataset. This limitation should be considered when interpreting GDP-related comparisons and correlations.
 
 ### 4. Important Data Quality Limitation: Venezuela GDP
+
 A critical finding is the complete absence of GDP data (`gdp`), carbon intensity (`co2_per_gdp`), and energy intensity (`energy_per_gdp`) for **Venezuela across the entire study period (1990–2024)**. All analyses linking economic performance to environmental impact for the region are constrained by this missing data.
 
 ## Collaboration Notes
@@ -197,4 +206,4 @@ pip install -r requirements.txt
 
 ## Merge Conflict Reflection
 
-We first created a branch called `merge-conflict-branch`, then switch back to main and edit a line (line #149) in the README and push our changes. Now that the newly created branch is 1 commit behind we explicitly do not pull or merge from main and edit that same line and also add to our merge conflict reflection.
+We first created a branch called `merge-conflict-branch`, then switched back to the main branch and edited the header line for the Merge Conflict Reflection section in the README and pushed our changes. Now that the newly created branch is 1 commit behind we explicitly do not pull or merge from main. We then edit that same line and also add to our merge conflict reflection. Upon pushes all our changes we initiated a pull request and encountered the merge conflict error "This branch has conflicts that must be resolved". When attempting to resolve we were met with three general options to accept the current change, incoming change, or merge both together. We opted to accept the current change as that had more information in the README filled out. With the conflict resolved, we merged the pull request.
