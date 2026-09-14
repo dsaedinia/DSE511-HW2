@@ -95,6 +95,8 @@ south-america-co2-eda/
 ## Results
 
 ## Key Findings from EDA
+> **Key Summary:** South American $\text{CO}_2$ emissions are heavily right-skewed and concentrated in large economies like Brazil, showing near-perfect coupling with GDP ($r = 0.993$), primary energy use ($r = 0.990$), and population ($r = 0.939$). However, per-capita emissions follow a completely different pattern—led by smaller nations like Venezuela and Suriname—while a total absence of Venezuelan GDP data from 1990 to 2024 presents a major regional analytical constraint.
+> 
 ### 1. High Regional Concentration
 Total emissions are heavily concentrated in a few large economies, primarily **Brazil** (391.59 Mt avg), Argentina, and Venezuela. The resulting distribution is strongly **right-skewed**, meaning a small number of observations account for the vast majority of regional emissions.
 
