@@ -98,14 +98,14 @@ south-america-co2-eda/
 ### 1. High Regional Concentration
 Total emissions are heavily concentrated in a few large economies, primarily **Brazil** (391.59 Mt avg), Argentina, and Venezuela. The resulting distribution is strongly **right-skewed**, meaning a small number of observations account for the vast majority of regional emissions.
 
-![Distribution of Annual CO₂ Emissions](./distribution_annual_co2_emissions.png)
+![Distribution of Annual CO₂ Emissions](./reports/figures/distribution_annual_co2_emissions.png)
 
 ***
 
 ### 2. Divergence Between Total and Individual Footprints
 High total national emissions do not equate to high per-capita emissions. While Brazil leads in absolute terms, **Venezuela** (5.26 t/person) and **Suriname** (4.34 t/person) have significantly higher individual footprints than Brazil (2.08 t/person).
 
-![Average CO₂ Emissions per Capita by Country](./avg_co2_per_capita_by_country.png)
+![Average CO₂ Emissions per Capita by Country](./reports/figures/avg_co2_per_capita_by_country.png)
 
 ***
 
@@ -119,7 +119,7 @@ Absolute CO₂ emissions move almost perfectly in lockstep with a country’s ec
 | Population & Total CO₂ Emissions | 0.939 |
 | **CO₂ per Capita & GDP** | **0.056** |
 
-![Correlation Matrix](./correlation_matrix.png)
+![Correlation Matrix](./reports/figures/correlation_matrix.png)
 
 ***
 
