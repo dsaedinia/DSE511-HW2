@@ -146,5 +146,6 @@ pip install -r requirements.txt
 
 - `south_america_co2_eda_Viz.ipynb` or `south_america_co2_eda_Viz.py` for EDA
 
-## Merge Conflict Reflection (Words to create merge conflict)
+## Merge Conflict Reflection
 
+We first created a branch called `merge-conflict-branch`, then switch back to main and edit a line (line #149) in the README and push our changes. Now that the newly created branch is 1 commit behind we explicitly do not pull or merge from main and edit that same line and also add to our merge conflict reflection.
