@@ -96,17 +96,10 @@ south-america-co2-eda/
 
 ## Key Findings from EDA
 
-The EDA shows substantial differences in CO₂ emissions across South American countries, with Brazil having the highest average total CO₂ emissions, while Venezuela and Suriname have the highest average CO₂ emissions per capita. Total CO₂ emissions are strongly associated with GDP, population, and primary energy consumption, with correlations of 0.993, 0.939, and 0.990, respectively. The analysis also shows that total emissions and per-capita emissions reveal different patterns across countries.
-
-### Representative Figure
-
-The figure below shows the average CO₂ emissions per capita by country.
-
-![Average CO₂ Emissions per Capita by Country](reports/figures/co2_per_capita_by_country.png)
-
-### Reflection
-
-One interesting finding was that the country with the highest total CO₂ emissions was not the country with the highest CO₂ emissions per capita. This demonstrates why examining both total and per-capita emissions provides a more complete understanding of emissions patterns.
+* **Regional Emissions Concentration:** Total $\text{CO}_2$ emissions are strongly right-skewed and heavily concentrated in a few large economies, led by Brazil (391.59 Mt annual average), Argentina, and Venezuela.
+* **Total vs. Per-Capita Discrepancy:** High national totals do not imply high individual emissions. Smaller countries like Venezuela (5.26 tonnes/person) and Suriname (4.34 tonnes/person) have the highest per-capita emissions in the region, exceeding Brazil.
+* **Economic & Energy Drivers:** Absolute emissions correlate almost perfectly with primary energy consumption ($r = 0.990$), GDP ($r = 0.993$), and population ($r = 0.939$). However, per-capita emissions show no linear relationship with total GDP ($r = 0.056$).
+* **Data Quality Limitation:** Complete absence of GDP metrics (`gdp`, `co2_per_gdp`, `energy_per_gdp`) for Venezuela across the 1990–2024 timeframe restricts full regional economic analysis.
 
 ## Collaboration Notes
 
