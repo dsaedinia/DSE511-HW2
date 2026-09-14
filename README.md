@@ -97,33 +97,62 @@ south-america-co2-eda/
 ## Key Findings from EDA
 > **Key Summary:** South American $\text{CO}_2$ emissions are heavily right-skewed and concentrated in large economies like Brazil, showing near-perfect coupling with GDP ($r = 0.993$), primary energy use ($r = 0.990$), and population ($r = 0.939$). However, per-capita emissions follow a completely different pattern—led by smaller nations like Venezuela and Suriname—while a total absence of Venezuelan GDP data from 1990 to 2024 presents a major regional analytical constraint.
 > 
-### 1. High Regional Concentration
-Total emissions are heavily concentrated in a few large economies, primarily **Brazil** (391.59 Mt avg), Argentina, and Venezuela. The resulting distribution is strongly **right-skewed**, meaning a small number of observations account for the vast majority of regional emissions.
+The key findings from the exploratory data analysis (EDA) of South American $\text{CO}_2$ emissions are summarized below:
 
-![Distribution of Annual CO₂ Emissions](./reports/figures/distribution_annual_co2_emissions.png)
+### 1. Large Differences in Total $\text{CO}_2$ Emissions Across Countries
+The analysis shows substantial differences in total $\text{CO}_2$ emissions among South American countries. Brazil has the highest average annual $\text{CO}_2$ emissions, at approximately 391.59 Mt, followed by Argentina (160.16 Mt) and Venezuela (138.22 Mt). In contrast, Guyana and Suriname have considerably lower total emissions. This indicates that total regional $\text{CO}_2$ emissions are concentrated among a relatively small number of countries with larger populations and greater levels of economic and energy activity.
 
-***
-
-### 2. Divergence Between Total and Individual Footprints
-High total national emissions do not equate to high per-capita emissions. While Brazil leads in absolute terms, **Venezuela** (5.26 t/person) and **Suriname** (4.34 t/person) have significantly higher individual footprints than Brazil (2.08 t/person).
-
-![Average CO₂ Emissions per Capita by Country](./reports/figures/avg_co2_per_capita_by_country.png)
+![Total CO2 Emissions Trend](./reports/figures/total_co2_emissions_trend.png)
 
 ***
 
-### 3. Strong Economic and Energy Coupling
-Absolute CO₂ emissions move almost perfectly in lockstep with a country’s economic activity and energy use. However, a country's average individual footprint (**CO₂ per capita**) shows almost no linear relationship to its total economic output (**GDP**).
+### 2. Total $\text{CO}_2$ Emissions and $\text{CO}_2$ per Capita Show Different Patterns
+Brazil has the highest total $\text{CO}_2$ emissions, but it does not have the highest average $\text{CO}_2$ emissions per capita. Venezuela and Suriname have the highest average $\text{CO}_2$ emissions per capita, at approximately 5.26 and 4.34 tonnes per person, respectively. This demonstrates that total emissions and per-capita emissions capture different aspects of environmental impact. A country with a smaller population can have relatively low total emissions while still having high emissions per person.
 
-| Relationship | Correlation ($r$) |
+![Average CO2 Emissions per Capita by Country](./reports/figures/avg_co2_per_capita_by_country.png)
+
+***
+
+### 3. $\text{CO}_2$ Emissions Are Strongly Right-Skewed
+The distribution of annual $\text{CO}_2$ emissions is strongly right-skewed. Most country-year observations have relatively low emissions, with many observations below approximately 100 Mt, while a smaller number of observations have substantially higher emissions, including values above 500 Mt. This indicates considerable variation in emissions across countries and years. Because of this skewed distribution, the median can provide a useful representation of a typical observation in addition to the mean.
+
+![Distribution of Annual CO2 Emissions](./reports/figures/distribution_annual_co2_emissions.png)
+
+***
+
+### 4. GDP, Population, Energy Consumption, and $\text{CO}_2$ Are Strongly Associated
+The correlation analysis reveals very strong positive relationships among population, economic activity, energy consumption, and total $\text{CO}_2$ emissions. Some of the strongest correlations are:
+
+| Relationship | Correlation (r) |
 | :--- | :--- |
-| GDP & Primary Energy Consumption | 0.997 |
-| **GDP & Total CO₂ Emissions** | **0.993** |
-| Population & Total CO₂ Emissions | 0.939 |
-| **CO₂ per Capita & GDP** | **0.056** |
+| **GDP and $\text{CO}_2$** | 0.993 |
+| **GDP and Primary Energy Consumption** | 0.997 |
+| **$\text{CO}_2$ and Primary Energy Consumption** | 0.990 |
+| **Population and $\text{CO}_2$** | 0.939 |
+| **Population and GDP** | 0.976 |
 
-![Correlation Matrix](./reports/figures/correlation_matrix.png)
+These results indicate that observations with larger populations, higher GDP, and greater primary energy consumption tend to have higher total $\text{CO}_2$ emissions. However, these correlations represent associations and do not establish causal relationships.
+
+![GDP vs CO2 Emissions](./reports/figures/gdp_vs_co2_emissions.png)
 
 ***
+
+### 5. Per-Capita Measures Provide a Different Perspective
+Although total $\text{CO}_2$ emissions are strongly associated with GDP and population, $\text{CO}_2$ per capita has a much weaker relationship with these variables. The correlation between $\text{CO}_2$ per capita and GDP is only 0.056, while its correlation with population is −0.066. This contrast shows that analyzing only total emissions can hide important differences in emissions intensity at the individual level. Therefore, both total and per-capita measures are important for understanding emissions patterns.
+
+![Distribution of CO2 Emissions per Capita](./reports/figures/distribution_co2_per_capita.png)
+
+***
+
+### 6. Emissions Intensity Is Related to Energy Intensity
+The correlation between $\text{CO}_2$ per GDP and energy per GDP is 0.708, indicating a relatively strong positive association between emissions intensity and energy intensity. This suggests that observations with higher energy use relative to GDP also tend to have higher $\text{CO}_2$ emissions relative to GDP. Measures of emissions and energy intensity therefore provide additional information beyond total emissions.
+
+![Energy Consumption vs CO2 Emissions](./reports/figures/energy_consumption_vs_co2_emissions.png)
+
+***
+
+### 7. Missing GDP Data for Venezuela Is an Important Limitation
+A significant data-quality limitation is the absence of GDP-related information for Venezuela across the 1990–2024 period. The variables `gdp`, `co2_per_gdp`, and `energy_per_gdp` contain missing values for Venezuela. Consequently, analyses involving these economic indicators may not fully represent all countries in the dataset. This limitation should be considered when interpreting GDP-related comparisons and correlations.
 
 ### 4. Important Data Quality Limitation: Venezuela GDP
 A critical finding is the complete absence of GDP data (`gdp`), carbon intensity (`co2_per_gdp`), and energy intensity (`energy_per_gdp`) for **Venezuela across the entire study period (1990–2024)**. All analyses linking economic performance to environmental impact for the region are constrained by this missing data.
