@@ -95,11 +95,36 @@ south-america-co2-eda/
 ## Results
 
 ## Key Findings from EDA
+### 1. High Regional Concentration
+Total emissions are heavily concentrated in a few large economies, primarily **Brazil** (391.59 Mt avg), Argentina, and Venezuela. The resulting distribution is strongly **right-skewed**, meaning a small number of observations account for the vast majority of regional emissions.
 
-* **Regional Emissions Concentration:** Total $\text{CO}_2$ emissions are strongly right-skewed and heavily concentrated in a few large economies, led by Brazil (391.59 Mt annual average), Argentina, and Venezuela.
-* **Total vs. Per-Capita Discrepancy:** High national totals do not imply high individual emissions. Smaller countries like Venezuela (5.26 tonnes/person) and Suriname (4.34 tonnes/person) have the highest per-capita emissions in the region, exceeding Brazil.
-* **Economic & Energy Drivers:** Absolute emissions correlate almost perfectly with primary energy consumption ($r = 0.990$), GDP ($r = 0.993$), and population ($r = 0.939$). However, per-capita emissions show no linear relationship with total GDP ($r = 0.056$).
-* **Data Quality Limitation:** Complete absence of GDP metrics (`gdp`, `co2_per_gdp`, `energy_per_gdp`) for Venezuela across the 1990–2024 timeframe restricts full regional economic analysis.
+![Distribution of Annual CO₂ Emissions](./distribution_annual_co2_emissions.png)
+
+***
+
+### 2. Divergence Between Total and Individual Footprints
+High total national emissions do not equate to high per-capita emissions. While Brazil leads in absolute terms, **Venezuela** (5.26 t/person) and **Suriname** (4.34 t/person) have significantly higher individual footprints than Brazil (2.08 t/person).
+
+![Average CO₂ Emissions per Capita by Country](./avg_co2_per_capita_by_country.png)
+
+***
+
+### 3. Strong Economic and Energy Coupling
+Absolute CO₂ emissions move almost perfectly in lockstep with a country’s economic activity and energy use. However, a country's average individual footprint (**CO₂ per capita**) shows almost no linear relationship to its total economic output (**GDP**).
+
+| Relationship | Correlation ($r$) |
+| :--- | :--- |
+| GDP & Primary Energy Consumption | 0.997 |
+| **GDP & Total CO₂ Emissions** | **0.993** |
+| Population & Total CO₂ Emissions | 0.939 |
+| **CO₂ per Capita & GDP** | **0.056** |
+
+![Correlation Matrix](./correlation_matrix.png)
+
+***
+
+### 4. Important Data Quality Limitation: Venezuela GDP
+A critical finding is the complete absence of GDP data (`gdp`), carbon intensity (`co2_per_gdp`), and energy intensity (`energy_per_gdp`) for **Venezuela across the entire study period (1990–2024)**. All analyses linking economic performance to environmental impact for the region are constrained by this missing data.
 
 ## Collaboration Notes
 
